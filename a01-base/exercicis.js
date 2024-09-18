@@ -21,6 +21,7 @@ document.getElementById('ex02').addEventListener("click", function() {
 	  alert("Ets menor d'edat");
 	}
 	*/
+	/* TERNARI */
 	age >= 18 ? alert("Ets major d'edat") : alert("Ets menor d'edat");
 
 });
@@ -32,11 +33,23 @@ document.getElementById('ex03').addEventListener("click", function() {
 	let num1 = parseInt(prompt("Escull un primer numero: "))
 	let num2 = parseInt(prompt("Escull un segon numero: "))
 	let num3 = parseInt(prompt("Escull un tercer numero: "))
-
+	
 	let sum = num1 + num2 + num3
 	alert(sum)
 
-});
+
+	/* FER AMB UN FOR, has de corregir això d'aqui abaix
+
+	let total = 3
+	let num = 0
+	let sum
+
+	for (i in total) {
+		parseInt(prompt("Escull un  numero: "))
+		num += 1
+	}
+	alert(sum)
+	*/
 
 /***********************************************************************************/
 

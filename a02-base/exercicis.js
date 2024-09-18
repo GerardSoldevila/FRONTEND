@@ -14,9 +14,18 @@ document.getElementById('ex01').addEventListener("click", function() {
 
 document.getElementById('ex02').addEventListener("click", function() {
 	
-
-
+	let script = prompt("Introdueix una cadena de text: ")
+	let position = parseInt(prompt("Digues una posició numèrica: "))
 	
+
+	do {
+		position = prompt("Digues una posició numèrica vàlida: ")
+
+	} while (position < 0 || position > script.length)
+	
+	newScript = script.split(" ")	
+	alert(newScript[position])	 
+
 });
 
 /***********************************************************************************/
