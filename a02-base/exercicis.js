@@ -82,18 +82,29 @@ document.getElementById('ex05').addEventListener("click", function() {
 
 document.getElementById('ex06').addEventListener("click", function() {
 	
-	let num = parseFloat(prompt("Introdueix un numero amb diversos decimals: "))
-	
-	if (isNaN(num)) {}
+	let entrada = true
 
+	while (entrada) {
+		let num = parseFloat(prompt("Introdueix un numero amb diversos decimals: "))
 
+		if (!isNaN(num)) {	
+			let numFixed = num.toFixed(2)
+			alert(numFixed)
+			entrada = false
+		}
+		else {
+			alert("Això no és un valor numèric!")
+		}
+	}
 
 });
 
 /***********************************************************************************/
 
 document.getElementById('ex07').addEventListener("click", function() {
-	// -------------------
-	// Codi exercici 7...
-	// -------------------
+	
+	let newDate = new Date()
+
+	alert("Dia de la setmana: "+ newDate.getDay()+ "\n" + "Mes de l'any: "+ newDate.getMonth()+ "\n" + "Any: "+ newDate.getFullYear()+ "\n" + "Hora: "+ newDate.getHours() + "\n" + "Minuts: "+ newDate.getMinutes() + "\n" + "Segon: "+ newDate.getSeconds())
+	
 });
