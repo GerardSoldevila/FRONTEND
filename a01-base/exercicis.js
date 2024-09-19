@@ -37,7 +37,7 @@ document.getElementById('ex03').addEventListener("click", function() {
 	let sum = num1 + num2 + num3
 	alert(sum)
 
-
+});
 	/* FER AMB UN FOR, has de corregir això d'aqui abaix
 
 	let total = 3

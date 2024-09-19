@@ -63,21 +63,18 @@ document.getElementById('ex05').addEventListener("click", function() {
 	let total = 0
 	if (email.includes(sign)) {
 		for (let i = 0; i < email.length; i++) {
-			if (email[i] === sign) {
+			if (email[i] == sign) {
 				total += 1;
-			}
+				}
 		if (total > 1) {
 			alert("Una adreça de correu no pot tenir més d'un caracter @")
-		}else{
+		}else if (total == 1){
 			alert("L'adreça de correu especificada és correcta")
 		}
-    }
-	
+		}
 	}else {
-
 		alert("Això no és un email!")
 	}
-
 
 });
 
@@ -85,6 +82,9 @@ document.getElementById('ex05').addEventListener("click", function() {
 
 document.getElementById('ex06').addEventListener("click", function() {
 	
+	let num = parseFloat(prompt("Introdueix un numero amb diversos decimals: "))
+	
+	if (isNaN(num)) {}
 
 
 
