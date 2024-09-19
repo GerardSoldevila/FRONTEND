@@ -17,10 +17,10 @@ document.getElementById('ex02').addEventListener("click", function() {
 	let script = prompt("Introdueix una cadena de text: ")
 	let position = parseInt(prompt("Quina posició vols consultar?: "))
 	
-	while (position < 0 || position >= script.length)  {
+	while (position < 1 || position >= script.length)  {
 		position = parseInt(prompt("Posicio no vàlida!"+ '\n' + "Digues una posició numèrica vàlida: "))
 	}
-	alert("La posicio de " + position +" de la cadena és " + script[position])
+	alert("La posicio de " + position +" de la cadena és " + script[position-1])
 
 	});
 
@@ -105,6 +105,6 @@ document.getElementById('ex07').addEventListener("click", function() {
 	
 	let newDate = new Date()
 
-	alert("Dia de la setmana: "+ newDate.getDay()+ "\n" + "Mes de l'any: "+ newDate.getMonth()+ "\n" + "Any: "+ newDate.getFullYear()+ "\n" + "Hora: "+ newDate.getHours() + "\n" + "Minuts: "+ newDate.getMinutes() + "\n" + "Segon: "+ newDate.getSeconds())
+	alert("Dia de la setmana: "+ newDate.getDate()+ "\n" + "Mes de l'any: "+ newDate.getMonth()+ "\n" + "Any: "+ newDate.getFullYear()+ "\n" + "Hora: "+ newDate.getHours() + "\n" + "Minuts: "+ newDate.getMinutes() + "\n" + "Segon: "+ newDate.getSeconds())
 	
 });
