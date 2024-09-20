@@ -66,12 +66,13 @@ document.getElementById('ex05').addEventListener("click", function() {
 			if (email[i] == sign) {
 				total += 1;
 				}
+			}
 		if (total > 1) {
 			alert("Una adreça de correu no pot tenir més d'un caracter @")
 		}else if (total == 1){
 			alert("L'adreça de correu especificada és correcta")
 		}
-		}
+		
 	}else {
 		alert("Això no és un email!")
 	}
