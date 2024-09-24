@@ -92,20 +92,20 @@ document.getElementById('ex02').addEventListener("click", function() {
 			return numFixed		
 		}
 		else {
-			alert("Això no és un valor numèric!")
+			return("Això no és un valor numèric!")
 		}
 	}
 
 
 	const arrodoniment2 = (num, n) => {
 
-		if (num) {	
+		if (!isNaN(num)) {	
 			let numFixed = num.toFixed(n)
 			return numFixed
 			
 		}
 		else {
-			alert("Això no és un valor numèric!")
+			return("Això no és un valor numèric!")
 		}
 
 	}
@@ -144,41 +144,171 @@ document.getElementById('ex02').addEventListener("click", function() {
 
 document.getElementById('ex03').addEventListener("click", function() {
 	
-	const sum = function(nums1,nums2) {
+
+let sum 
+
+// Funció que suma
+function suma(...nums) {
+    if (nums.length < 2) {
+        alert("Calen almenys dos números!");
+        return;
+    }
+    sum = 0;  // Reinicia el valor de sum per evitar que acumuli d'altres crides
+    for (let i = 0; i < nums.length; i++) {
+        if (typeof nums[i] === "number") {
+            sum += nums[i];
+        }
+    }
+    return sum;
+}
+
+// Crida de prova
+suma(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+alert(sum);
+console.log(sum);
 
 
-	}
+// Funció de fletxa (lambda) que suma
+let myFunction = (...nums) => {
+    let numbersTotal = [];
 
-	let nums1 = [1,2,3,4,5,6,7,8,9,10]
-	alert(nums1)
-	let nums2 = [5,5,5,5]
-	alert(nums2)
+    // Filtra només els elements numèrics
+    for (let x of nums) {
+        if (!isNaN(x)) {
+            numbersTotal.push(x);  // S'utilitza push en comptes de append
+        }
+    }
+
+    if (numbersTotal.length >= 2) {
+        sum = 0;  // Reinicia la suma per evitar acumulació
+        for (let i = 0; i < numbersTotal.length; i++) {
+            sum += numbersTotal[i];
+        }
+    } else {
+        alert("Calen almenys dos números vàlids!");
+    }
+    return sum;
+}
+
+// Crida de prova
+myFunction(5, 5, 5, 5);
+alert(sum);
+console.log(sum);
+
+
+})
 	
 
 
-});
 
 /***********************************************************************************/
 
 document.getElementById('ex04').addEventListener("click", function() {
-	// ------------------
-	// Codi exercici 4...
-	// ------------------
+	
+	/*let timeout;*/
+
+	let funcio1 = () =>  {
+		alert("Soc una callback!")
+		
+	}
+
+	function myCallbBack(){
+		setTimeout(funcio1,2000)
+
+	}
+
+
+	myCallbBack(funcio1)
+
 });
+
+
 
 /***********************************************************************************/
 
 document.getElementById('ex05').addEventListener("click", function() {
-	// ------------------
-	// Codi exercici 5...
-	// ------------------
-});
 
+	function myCallbBack(callback) {
+		
+		let intervalId = setInterval(callback, 2000); 
+		
+		setTimeout(() => {
+		  clearInterval(intervalId); 
+		  console.log("Interval aturat després de 10 segons");
+		}, 10000); // 10000 mil·lisegons = 10 segons
+		}
+		
+		let funcio1 = () => {
+			console.log("Callback again!"); 
+		};
+		
+	  myCallbBack(funcio1); 
+
+	})
 /***********************************************************************************/
 
 document.getElementById('exE1').addEventListener("click", function() {
-	// -------------------
-	// Codi exercici E1...
-	// -------------------
+	
+	let sumo 
+	let resta
+	let multiplica
+	
+	let operations = (nums1,nums2,nums3) => {
+		
+		if (nums1.length < 2) {
+			a = ("Calen almenys dos números!");
+			return(a);
+			
+			
+		}else{
+			sumo = 0;  
+			
+			for (let i = 0; i < nums1.length; i++) {	
+				sumo += nums1[i];			
+		}
+
+		if (nums2.length < 2) {
+			let b = ("Calen almenys dos números!");
+			return(b);
+
+		}else{
+			resta = nums2[0];
+			for (let i = 1; i < nums2.length; i++) {	
+				resta -= nums2[i]				
+			}
+		}
+		if (nums3.length < 2) {
+			let c = ("Calen almenys dos números!");
+			return(c);
+
+		}else{
+			
+			multiplica = 1;
+			
+			for (let i = 0; i < nums3.length; i++) {	
+				if (typeof nums3[i] == "number") {
+					multiplica *= nums3[i]
+				}					
+			}
+			
+		}
+
+		
+	}
+	
+	}
+	// Crida de prova
+	//let suma = operations(99,1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+	//let resto = operations(55,5,5,5)
+	//let multiplico = operations("A",5,5)
+	operations([99,1, 2, 3, 4, 5, 6, 7, 8, 9, 10],[55,5,5,5],["A",5,5]);
+	alert(sumo);
+	alert(resta)
+	alert(multiplica)
+
+	console.log("Suma" + sumo);
+	console.log("Resta" + resta)
+	console.log("Multiplica" + multiplica)
+	
 });
 
