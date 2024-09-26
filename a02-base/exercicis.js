@@ -29,7 +29,7 @@ document.getElementById('ex02').addEventListener("click", function() {
 
 document.getElementById('ex03').addEventListener("click", function() {
 	let cadena = prompt("Introdueix una cadena de text: ")
-	let substring = cadena.substring(4,15)
+	let substring = cadena.substring(3,15)
 	alert(substring)
 
 
